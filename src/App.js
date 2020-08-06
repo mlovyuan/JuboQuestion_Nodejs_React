@@ -9,10 +9,6 @@ function App() {
       <Navbar />
       <br />
       <PatientsList />
-      {/* <Route path="/" exact component={UsersList} />
-      <Route path="/edit/:id" component={UserEdit} />
-      <Route path="/create" component={UserCreate} />
-      <Route path="/order" component={CreateOrder} /> */}
     </Router>
   );
 }

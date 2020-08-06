@@ -49,7 +49,7 @@ function TableWithDialog(){
     const [patientsData, SetPatientsData] = useState([]);
     useEffect(() =>{
         axios.get('http://localhost:5000/patients/')
-        .then((res) => { console.log(JSON.stringify(res.data)); SetPatientsData(res.data) })
+        .then((res) => { SetPatientsData(res.data) })
         .catch((err) => { console.log(err) })
     },[]);
 
@@ -104,13 +104,6 @@ function TableWithDialog(){
         setMessageOpen(!messageOpen);
     }
 
-    // 確定新增Order
-    const [addMes, SetAddMes] = useState();
-    const order = { message : addMes};
-    const AddOrder = () =>{
-        console.log(messageOpen)
-    }
-
     function OrderDialog() {
         const classes = useStyles();
 
@@ -121,7 +114,7 @@ function TableWithDialog(){
                 <div>
                     <IconButton aria-label="add" onClick={MessageClickOpen}>
                         <AddCircleIcon fontSize="small" />
-                    </IconButton>{console.log({messageOpen})}
+                    </IconButton>
                     <ShowTextField visible={messageOpen} patientId={patientId} />
                 </div>
                 <DialogContent>
